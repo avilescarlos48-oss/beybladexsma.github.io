@@ -180,20 +180,12 @@
   </div>
 
   <!-- RESULTADOS -->
-  <div class="card">
-    <h3>🏆 Últimos Resultados</h3>
-    <p>🥇 Campeón: CHARLYZARD</p>
-    <p>🥈 Segundo: CHAMPS</p>
-    <p>🥉 Tercero: ARIEL</p>
-  </div>
+ <div class="card" id="ranking">
+  <h3>📊 Ranking Oficial</h3>
 
-  <!-- RANKING AUTOMÁTICO -->
-  <div class="card" id="ranking">
-    <h3>📊 Ranking Oficial</h3>
-
-    <!-- Aquí se llena automático desde Google Sheets -->
-    <div id="ranking-lista"></div>
-  </div>
+  <!-- Aquí se cargará automáticamente -->
+  <div id="ranking-list"></div>
+</div>
 
 </div>
 
@@ -230,6 +222,36 @@ async function cargarRanking() {
 }
 
 cargarRanking();
+</script>
+<script>
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVILlIWRUA_zcbTbvGQIuvef8Cwkseg4GFjeh-E7UZItcRp0BKvl8zPVtMDaRB79MKO3BqbFROpqbA/pub?gid=0&single=true&output=csv";
+
+fetch(sheetURL)
+  .then(response => response.text())
+  .then(data => {
+    const rows = data.split("\n").slice(1); // quitar encabezado
+
+    let html = "";
+
+    rows.forEach(row => {
+      const cols = row.split(",");
+
+      const posicion = cols[0];
+      const blader = cols[1];
+      const puntos = cols[4];
+
+      if(blader && puntos){
+        html += `
+          <div class="ranking-item">
+            <span>${posicion}. ${blader}</span>
+            <span class="pts">${puntos} PTS</span>
+          </div>
+        `;
+      }
+    });
+
+    document.getElementById("ranking-list").innerHTML = html;
+  });
 </script>
 
 </body>
