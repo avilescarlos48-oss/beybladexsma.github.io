@@ -5,71 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liga Beyblade X SMA</title>
 
+  <!-- Fuente Gamer -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f4f4;
-      color: #222;
+      font-family: "Orbitron", sans-serif;
+      background: radial-gradient(circle at top, #1a0033, #000);
+      color: white;
     }
 
     header {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 25px;
+      background: rgba(0,0,0,0.8);
+      border-bottom: 2px solid rgba(150,0,255,0.3);
     }
 
     header h1 {
+      font-size: 1.4em;
+      color: cyan;
       margin: 0;
-      font-size: 2.5em;
     }
 
-    nav {
-      background: crimson;
-      padding: 12px;
+    .menu {
+      font-size: 1.8em;
+      cursor: pointer;
+    }
+
+    .hero {
       text-align: center;
+      padding: 50px 20px;
     }
 
-    nav a {
+    .hero img {
+      width: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 25px purple;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+      color: white;
+      text-shadow: 0 0 15px purple;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      font-family: Arial, sans-serif;
+      font-size: 1em;
+      color: #bbb;
+    }
+
+    .btn-main {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, purple, #5a00ff);
       color: white;
       text-decoration: none;
-      margin: 12px;
       font-weight: bold;
+      box-shadow: 0 0 20px rgba(180,0,255,0.6);
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      max-width: 950px;
+    .section {
+      max-width: 900px;
       margin: auto;
-      background: white;
-      padding: 25px;
-      margin-top: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.15);
-    }
-
-    h2 {
-      color: crimson;
+      padding: 20px;
     }
 
     .card {
-      background: #fafafa;
-      border-left: 6px solid crimson;
-      padding: 15px;
+      background: rgba(40,0,70,0.35);
+      border: 1px solid rgba(180,0,255,0.3);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 25px rgba(120,0,255,0.15);
+    }
+
+    .card h3 {
+      margin: 0;
+      color: cyan;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      font-size: 0.8em;
+      margin-top: 10px;
+    }
+
+    .ranking-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px;
+      border-radius: 18px;
       margin: 15px 0;
-      border-radius: 8px;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .ranking-item span {
+      font-size: 1.1em;
+    }
+
+    .pts {
+      color: violet;
+      font-weight: bold;
     }
 
     footer {
       text-align: center;
-      padding: 15px;
-      background: #111;
-      color: white;
-      margin-top: 30px;
+      padding: 20px;
+      font-size: 0.8em;
+      color: #777;
     }
   </style>
 </head>
@@ -77,88 +135,76 @@
 <body>
 
 <header>
-  <h1>Liga Beyblade X SMA</h1>
-  <p>Liga Local Competitiva en San Miguel de Allende</p>
+  <h1>Beyblade X SMA</h1>
+  <div class="menu">☰</div>
 </header>
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#torneos">Torneos</a>
-  <a href="#ranking">Ranking</a>
-  <a href="#noticias">Noticias</a>
-  <a href="#fama">Salón de la Fama</a>
-</nav>
+<!-- HERO -->
+<div class="hero">
+  <img src="images/logo.png" alt="Logo Liga">
 
-<section id="inicio">
-  <h2>🏆 Visión de la Liga</h2>
-  <p>
-    Bienvenidos a la página oficial de la <strong>Liga Local Beyblade X SMA</strong>.
-    Este espacio existe para reunir a la comunidad competitiva de Beyblade X en San Miguel de Allende.
-  </p>
-
-  <div class="card">
-    Nuestra misión es crear torneos constantes, rankings oficiales y un lugar donde los bladers puedan
-    mejorar, competir y hacer historia dentro de la liga.
-  </div>
-</section>
-
-<section id="torneos">
-  <h2>📅 Torneos Semanales</h2>
-
-  <div class="card">
-    <strong>📍 Lugar:</strong> Tienda Vortex <br>
-    <strong>🗓️ Día:</strong> Todos los jueves <br>
-    <strong>🕔 Hora:</strong> 5:00 PM <br>
-    <strong>⚔️ Formato:</strong> 3 vs 3 (Equipos)
-  </div>
+  <h2>LIGA LOCAL COMPETITIVA</h2>
 
   <p>
-    Cada semana los mejores equipos se enfrentan para ganar puntos en el ranking oficial.
+    Torneos semanales de Beyblade X en San Miguel de Allende.
+    Formato oficial <strong>3 vs 3</strong> cada jueves en Tienda Vortex.
   </p>
-</section>
 
-<section id="ranking">
-  <h2>📊 Ranking Oficial</h2>
+  <a href="#ranking" class="btn-main">VER CLASIFICACIÓN 🏆</a>
+</div>
 
-  <div class="card">
-    1. Equipo Alpha — 200 pts <br>
-    2. Equipo Vortex — 170 pts <br>
-    3. Equipo Dragoon — 150 pts
-  </div>
-
-  <p>El ranking se actualiza después de cada torneo semanal.</p>
-</section>
-
-<section id="noticias">
-  <h2>📰 Noticias</h2>
+<!-- TORNEOS -->
+<div class="section">
 
   <div class="card">
-    <strong>Temporada 2026 iniciada</strong><br>
-    Nuevos torneos semanales todos los jueves.
+    <h3>📅 Torneo Semanal</h3>
+    <p>
+      <strong>📍 Lugar:</strong> Tienda Vortex <br>
+      <strong>🗓 Día:</strong> Todos los jueves <br>
+      <strong>🕔 Hora:</strong> 5:00 PM <br>
+      <strong>⚔ Formato:</strong> 3 vs 3
+    </p>
+    <div class="tag">REGISTRO ABIERTO</div>
   </div>
 
+  <!-- RESULTADOS -->
   <div class="card">
-    <strong>Formato oficial 3 vs 3</strong><br>
-    Todos los eventos se jugarán en equipos competitivos.
-  </div>
-</section>
-
-<section id="fama">
-  <h2>⭐ Salón de la Fama</h2>
-
-  <div class="card">
-    🏆 Primer Campeón Histórico: (Nombre / Equipo)<br>
-    Logro: Ganador del torneo inaugural
+    <h3>🏆 Últimos Resultados</h3>
+    <p>🥇 Campeón: Equipo Chill</p>
+    <p>🥈 Segundo: Equipo Minor</p>
+    <p>🥉 Tercero: Equipo Vortex</p>
   </div>
 
-  <div class="card">
-    🔥 Equipo Legendario: (Nombre)<br>
-    Logro: Más victorias consecutivas
+  <!-- RANKING -->
+  <div class="card" id="ranking">
+    <h3>📊 Ranking Oficial</h3>
+
+    <div class="ranking-item">
+      <span>1. Gabbylyy</span>
+      <span class="pts">83 PTS</span>
+    </div>
+
+    <div class="ranking-item">
+      <span>2. Ghast1003</span>
+      <span class="pts">62 PTS</span>
+    </div>
+
+    <div class="ranking-item">
+      <span>3. Garfield</span>
+      <span class="pts">56 PTS</span>
+    </div>
+
+    <div class="ranking-item">
+      <span>4. Nomad</span>
+      <span class="pts">50 PTS</span>
+    </div>
+
   </div>
-</section>
+
+</div>
 
 <footer>
-  © 2026 Liga Local Beyblade X SMA — Tienda Vortex
+  © 2026 Liga Beyblade X SMA — Tienda Vortex
 </footer>
 
 </body>
