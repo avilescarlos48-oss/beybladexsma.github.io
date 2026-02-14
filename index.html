@@ -5,207 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liga Beyblade X SMA</title>
 
-  <!-- Fuente Gamer -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
     body {
       margin: 0;
-      font-family: "Orbitron", sans-serif;
-      background: radial-gradient(circle at top, #1a0033, #000);
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle, #120018, #000);
       color: white;
+      text-align: center;
     }
 
+    /* HEADER */
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 18px 25px;
-      background: rgba(0,0,0,0.8);
-      border-bottom: 2px solid rgba(150,0,255,0.3);
+      align-items: center;
+      padding: 20px 25px;
     }
 
-    header h1 {
-      font-size: 1.4em;
-      color: cyan;
-      margin: 0;
-    }
-
-    .menu {
-      font-size: 1.8em;
+    .menu-btn {
+      font-size: 28px;
       cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+      text-shadow: 0 0 15px #ff00ff;
     }
 
-    .hero {
-      text-align: center;
-      padding: 50px 20px;
+    /* MENU DESPLEGABLE */
+    .menu {
+      position: absolute;
+      top: 70px;
+      right: 25px;
+      background: rgba(30, 0, 40, 0.95);
+      border: 2px solid #ff00ff;
+      border-radius: 15px;
+      padding: 15px;
+      width: 260px;
+      display: none;
+      box-shadow: 0 0 30px #ff00ff;
+      text-align: left;
     }
 
-    .hero img {
-      width: 120px;
+    .menu h3 {
+      margin: 10px 0;
+      color: #ff4dff;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    .menu p {
+      margin: 6px 0;
+      font-size: 15px;
+      color: white;
+    }
+
+    /* INICIO */
+    .inicio {
+      padding: 60px 20px;
+    }
+
+    .logo {
+      width: 150px;
       border-radius: 50%;
-      box-shadow: 0 0 25px purple;
+      box-shadow: 0 0 30px #ff00ff, 0 0 60px #7f00ff;
+      margin-bottom: 25px;
     }
 
-    .hero h2 {
-      font-size: 2.5em;
-      margin: 20px 0 10px;
-      color: white;
-      text-shadow: 0 0 15px purple;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: auto;
-      font-family: Arial, sans-serif;
-      font-size: 1em;
-      color: #bbb;
-    }
-
-    .btn-main {
-      margin-top: 25px;
-      display: inline-block;
-      padding: 15px 35px;
-      border-radius: 14px;
-      background: linear-gradient(90deg, purple, #5a00ff);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 20px rgba(180,0,255,0.6);
-    }
-
-    .section {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: rgba(40,0,70,0.35);
-      border: 1px solid rgba(180,0,255,0.3);
-      border-radius: 20px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 0 25px rgba(120,0,255,0.15);
-    }
-
-    .card h3 {
-      margin: 0;
-      color: cyan;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 6px 14px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      font-size: 0.8em;
-      margin-top: 10px;
-    }
-
-    .ranking-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px;
-      border-radius: 18px;
+    h1 {
+      font-size: 2.3rem;
       margin: 15px 0;
-      background: rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,255,255,0.08);
+      color: #ff4dff;
+      text-shadow: 0 0 15px #ff00ff, 0 0 35px #7f00ff;
+      letter-spacing: 2px;
     }
 
-    .ranking-item span {
-      font-size: 1.1em;
+    .subtexto {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: white;
+      opacity: 0.9;
     }
 
-    .pts {
-      color: violet;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.8em;
-      color: #777;
-    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Beyblade X SMA</h1>
-  <div class="menu">☰</div>
-</header>
+  <!-- HEADER CON MENU -->
+  <header>
+    <div></div>
 
-<!-- HERO -->
-<div class="hero">
-  <img src="images/logo.png" alt="Logo Liga">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <h2>LIGA LOCAL COMPETITIVA</h2>
+    <div class="menu" id="menu">
+      <h3>Últimos Resultados</h3>
+      <p>🏆 Campeón: <b>CHARLYZARD</b></p>
+      <p>🥈 Segundo: <b>CHAMPS</b></p>
+      <p>🥉 Tercero: <b>ARIEL</b></p>
 
-  <p>
-    Torneos semanales de Beyblade X en San Miguel de Allende.
-    Formato oficial <strong>3 vs 3</strong> cada jueves en Tienda Vortex.
-  </p>
+      <h3>Ranking Oficial</h3>
+      <p>1. CHARLYZARD — 262 pts</p>
+      <p>2. CHAMPS — 257 pts</p>
+      <p>3. ARIEL — 202 pts</p>
+    </div>
+  </header>
 
-  <a href="#ranking" class="btn-main">VER CLASIFICACIÓN 🏆</a>
-</div>
+  <!-- INICIO -->
+  <section class="inicio">
 
-<!-- TORNEOS -->
-<div class="section">
+    <!-- LOGO -->
+    <img src="imagenes/logo.png" alt="Logo Liga Beyblade X SMA" class="logo">
 
-  <div class="card">
-    <h3>📅 Torneo Semanal</h3>
-    <p>
-      <strong>📍 Lugar:</strong> Tienda Vortex <br>
-      <strong>🗓 Día:</strong> Todos los jueves <br>
-      <strong>🕔 Hora:</strong> 5:00 PM <br>
-      <strong>⚔ Formato:</strong> 3 vs 3
+    <!-- TITULO -->
+    <h1>LIGA COMPETITIVA DE BEYBLADE X SMA</h1>
+
+    <!-- SUBTEXTO -->
+    <p class="subtexto">
+      liga dedicada a organizar torneos de Beyblade X en la ciudad de San Miguel Allende,
+      formato meta juego 3g. Fomentamos la competencia sana, integración y crecimiento
+      de nuestros bladers de todas las edades y sexos.
     </p>
-    <div class="tag">REGISTRO ABIERTO</div>
-  </div>
 
-  <!-- RESULTADOS -->
-  <div class="card">
-    <h3>🏆 Últimos Resultados</h3>
-    <p>🥇 Campeón: Equipo Chill</p>
-    <p>🥈 Segundo: Equipo Minor</p>
-    <p>🥉 Tercero: Equipo Vortex</p>
-  </div>
+  </section>
 
-  <!-- RANKING -->
-  <div class="card" id="ranking">
-    <h3>📊 Ranking Oficial</h3>
+  <!-- SCRIPT MENU -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
 
-    <div class="ranking-item">
-      <span>1. Gabbylyy</span>
-      <span class="pts">83 PTS</span>
-    </div>
-
-    <div class="ranking-item">
-      <span>2. Ghast1003</span>
-      <span class="pts">62 PTS</span>
-    </div>
-
-    <div class="ranking-item">
-      <span>3. Garfield</span>
-      <span class="pts">56 PTS</span>
-    </div>
-
-    <div class="ranking-item">
-      <span>4. Nomad</span>
-      <span class="pts">50 PTS</span>
-    </div>
-
-  </div>
-
-</div>
-
-<footer>
-  © 2026 Liga Beyblade X SMA — Tienda Vortex
-</footer>
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>
