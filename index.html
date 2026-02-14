@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: "Orbitron", sans-serif;
-      background: radial-gradient(circle at top, #1a0033, #000);
+      background: radial-gradient(circle at top, #2a001f, #000);
       color: white;
     }
 
@@ -21,57 +21,62 @@
       align-items: center;
       justify-content: space-between;
       padding: 18px 25px;
-      background: rgba(0,0,0,0.8);
-      border-bottom: 2px solid rgba(150,0,255,0.3);
+      background: rgba(0,0,0,0.85);
+      border-bottom: 2px solid rgba(255,0,200,0.4);
     }
 
     header h1 {
       font-size: 1.4em;
-      color: cyan;
+      color: #ff4dff;
       margin: 0;
-    }
-
-    .menu {
-      font-size: 1.8em;
-      cursor: pointer;
+      text-shadow: 0 0 12px #ff00ff;
     }
 
     .hero {
       text-align: center;
-      padding: 50px 20px;
+      padding: 55px 20px;
     }
 
     .hero img {
-      width: 120px;
+      width: 130px;
       border-radius: 50%;
-      box-shadow: 0 0 25px purple;
+      box-shadow: 0 0 30px #ff00ff, 0 0 60px #ff1493;
+      margin-bottom: 20px;
     }
 
     .hero h2 {
-      font-size: 2.5em;
+      font-size: 2.6em;
       margin: 20px 0 10px;
-      color: white;
-      text-shadow: 0 0 15px purple;
+      color: #ff4dff;
+      text-shadow: 0 0 18px #ff00ff, 0 0 35px #ff1493;
     }
 
     .hero p {
-      max-width: 600px;
+      max-width: 650px;
       margin: auto;
       font-family: Arial, sans-serif;
       font-size: 1em;
-      color: #bbb;
+      color: #eee;
+      opacity: 0.85;
+      line-height: 1.6;
     }
 
     .btn-main {
-      margin-top: 25px;
+      margin-top: 30px;
       display: inline-block;
-      padding: 15px 35px;
-      border-radius: 14px;
-      background: linear-gradient(90deg, purple, #5a00ff);
+      padding: 16px 40px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, #ff00ff, #ff1493);
       color: white;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 0 20px rgba(180,0,255,0.6);
+      box-shadow: 0 0 25px rgba(255,0,200,0.8);
+      transition: 0.3s;
+    }
+
+    .btn-main:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255,0,200,1);
     }
 
     .section {
@@ -81,28 +86,30 @@
     }
 
     .card {
-      background: rgba(40,0,70,0.35);
-      border: 1px solid rgba(180,0,255,0.3);
-      border-radius: 20px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 0 25px rgba(120,0,255,0.15);
+      background: rgba(60,0,50,0.35);
+      border: 1px solid rgba(255,0,200,0.35);
+      border-radius: 22px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 0 25px rgba(255,0,200,0.15);
     }
 
     .card h3 {
       margin: 0;
-      color: cyan;
+      color: #ff4dff;
+      text-shadow: 0 0 10px #ff00ff;
     }
 
     .tag {
       display: inline-block;
-      padding: 6px 14px;
+      padding: 7px 16px;
       background: rgba(255,255,255,0.1);
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 0.8em;
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
+    /* Ranking Items */
     .ranking-item {
       display: flex;
       justify-content: space-between;
@@ -119,15 +126,17 @@
     }
 
     .pts {
-      color: violet;
+      color: #ff4dff;
       font-weight: bold;
+      text-shadow: 0 0 10px #ff00ff;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       font-size: 0.8em;
-      color: #777;
+      color: #aaa;
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -136,11 +145,13 @@
 
 <header>
   <h1>Beyblade X SMA</h1>
-  <div class="menu">☰</div>
 </header>
 
 <!-- HERO -->
 <div class="hero">
+
+  <!-- LOGO -->
+  <!-- IMPORTANTE: tu logo debe estar en /images/logo.png -->
   <img src="images/logo.png" alt="Logo Liga">
 
   <h2>LIGA LOCAL COMPETITIVA</h2>
@@ -153,9 +164,10 @@
   <a href="#ranking" class="btn-main">VER CLASIFICACIÓN 🏆</a>
 </div>
 
-<!-- TORNEOS -->
+<!-- SECCIONES -->
 <div class="section">
 
+  <!-- TORNEO -->
   <div class="card">
     <h3>📅 Torneo Semanal</h3>
     <p>
@@ -170,35 +182,17 @@
   <!-- RESULTADOS -->
   <div class="card">
     <h3>🏆 Últimos Resultados</h3>
-    <p>🥇 Campeón: Equipo Chill</p>
-    <p>🥈 Segundo: Equipo Minor</p>
-    <p>🥉 Tercero: Equipo Vortex</p>
+    <p>🥇 Campeón: CHARLYZARD</p>
+    <p>🥈 Segundo: CHAMPS</p>
+    <p>🥉 Tercero: ARIEL</p>
   </div>
 
-  <!-- RANKING -->
+  <!-- RANKING AUTOMÁTICO -->
   <div class="card" id="ranking">
     <h3>📊 Ranking Oficial</h3>
 
-    <div class="ranking-item">
-      <span>1. Gabbylyy</span>
-      <span class="pts">83 PTS</span>
-    </div>
-
-    <div class="ranking-item">
-      <span>2. Ghast1003</span>
-      <span class="pts">62 PTS</span>
-    </div>
-
-    <div class="ranking-item">
-      <span>3. Garfield</span>
-      <span class="pts">56 PTS</span>
-    </div>
-
-    <div class="ranking-item">
-      <span>4. Nomad</span>
-      <span class="pts">50 PTS</span>
-    </div>
-
+    <!-- Aquí se llena automático desde Google Sheets -->
+    <div id="ranking-lista"></div>
   </div>
 
 </div>
@@ -206,6 +200,37 @@
 <footer>
   © 2026 Liga Beyblade X SMA — Tienda Vortex
 </footer>
+
+<!-- SCRIPT RANKING GOOGLE SHEETS -->
+<script>
+async function cargarRanking() {
+
+  const url =
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVILlIWRUA_zcbTbvGQIuvef8Cwkseg4GFjeh-E7UZItcRp0BKvl8zPVtMDaRB79MKO3BqbFROpqbA/pub?gid=0&single=true&output=csv";
+
+  const respuesta = await fetch(url);
+  const texto = await respuesta.text();
+
+  const filas = texto.trim().split("\n").slice(1);
+
+  let html = "";
+
+  filas.forEach((fila, i) => {
+    const [nombre, puntos] = fila.split(",");
+
+    html += `
+      <div class="ranking-item">
+        <span>${i + 1}. ${nombre}</span>
+        <span class="pts">${puntos} PTS</span>
+      </div>
+    `;
+  });
+
+  document.getElementById("ranking-lista").innerHTML = html;
+}
+
+cargarRanking();
+</script>
 
 </body>
 </html>
